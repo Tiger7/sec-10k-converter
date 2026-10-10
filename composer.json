@@ -1,0 +1,23 @@
+{
+  "name": "local/sec-10k-converter",
+  "description": "File-queue SEC 10-K Markdown and EPUB converter",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": "^8.3",
+    "ext-curl": "*",
+    "ext-dom": "*",
+    "ext-mbstring": "*",
+    "ext-zip": "*",
+    "ext-xml": "*",
+    "guzzlehttp/guzzle": "^7.9",
+    "symfony/dom-crawler": "^7.0",
+    "league/html-to-markdown": "^5.1",
+    "vlucas/phpdotenv": "^5.6",
+    "monolog/monolog": "^3.8"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {}
+  }
+}

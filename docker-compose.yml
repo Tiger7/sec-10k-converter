@@ -1,0 +1,21 @@
+services:
+  web:
+    build: .
+    image: sec10k-local:dev
+    ports:
+      - "127.0.0.1:8080:80"
+    env_file: .env
+    volumes:
+      - ./storage:/opt/sec-10k-converter/storage
+      - ./logs:/opt/sec-10k-converter/logs
+    restart: unless-stopped
+  worker:
+    image: sec10k-local:dev
+    build: .
+    user: www-data
+    command: ["php", "/opt/sec-10k-converter/worker.php"]
+    env_file: .env
+    volumes:
+      - ./storage:/opt/sec-10k-converter/storage
+      - ./logs:/opt/sec-10k-converter/logs
+    restart: unless-stopped

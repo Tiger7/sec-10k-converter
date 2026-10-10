@@ -1,0 +1,19 @@
+[Unit]
+Description=SEC 10-K file queue worker
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/sec-10k-converter
+ExecStart=/usr/bin/php /opt/sec-10k-converter/worker.php
+Restart=always
+RestartSec=5
+UMask=0007
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
