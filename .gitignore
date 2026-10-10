@@ -7,12 +7,12 @@
 !/.env.example
 
 # 캐시, 작업 상태, 변환 결과
-/storage/*
-!/storage/.gitkeep
+/storage/
+
 
 # 실행 로그
-/logs/*
-!/logs/.gitkeep
+/logs/
+
 
 # 수정 전 백업 및 편집기 임시 파일
 *.bak
